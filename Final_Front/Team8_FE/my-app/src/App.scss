@@ -1,0 +1,92 @@
+// 페이지 max-width
+$max-width: 420px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+body,
+html {
+  background-color: rgba(205, 205, 205, 0.511);
+  overflow-x: hidden; /* 수평 스크롤 방지 */
+  font-family: "Mooli", sans-serif;
+  height: 100%; /* 페이지 전체 높이를 설정 */
+  margin: 0; /* 브라우저 기본 여백 제거 */
+  padding: 0; /* 브라우저 기본 패딩 제거 */
+}
+
+.page {
+  min-width: 100vw;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh; /* 페이지가 전체 뷰포트를 차지 */
+  height: 100%; /* 높이를 전체 뷰포트에 맞춤 */
+  background-color: #f5f5f5; /* 배경색 설정 */
+  display: flex; /* 부모 요소가 자식 요소를 정렬할 수 있도록 flex 사용 */
+  flex-direction: column;
+  align-items: center;
+  overscroll-behavior: none; /* 여분 스크롤 방지 */
+}
+
+.wrap {
+  padding-bottom: 6vh;
+  padding-top: 0; /* 상단 패딩 제거 */
+  width: 100%; /* 래핑 요소가 페이지 너비를 차지 */
+}
+
+@media (min-width: $max-width) {
+  .page {
+    min-width: $max-width;
+  }
+}
+
+/* app.scss */
+
+/* 폰트 파일 불러오기 */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./fonts/Moneygraphy-Rounded.otf') format('otf');
+  font-weight: normal;
+  
+  font-style: normal;
+}
+
+/* 기본 스타일에 폰트 적용 */
+body {
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'MyCustomFont', sans-serif;
+  font-weight: bold;
+  color: #4a1533;
+}
